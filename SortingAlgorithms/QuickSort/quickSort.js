@@ -1,4 +1,4 @@
-import pivotHelper from "./pivot_helper.js";
+import pivotHelper from "./pivotHelper.js";
 
 const quickSort = (arr, left = 0, right = arr.length - 1) => {
   if (left < right) {

@@ -1,5 +1,5 @@
-import maxDigits from "./max_digits.js";
-import getDigit from "./get_digit.js";
+import maxDigits from "./maxDigits.js";
+import getDigit from "./getDigit.js";
 
 const radixSort = (arr) => {
   const maxDigitsCount = maxDigits(arr);

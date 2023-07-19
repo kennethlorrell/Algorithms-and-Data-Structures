@@ -1,4 +1,4 @@
-import mergeTwoSortedArrays from "./merge_two_sorted_arrays.js";
+import mergeTwoSortedArrays from "./mergeTwoSortedArrays.js";
 
 const mergeSort = (arr) => {
   if (arr.length <= 1) {

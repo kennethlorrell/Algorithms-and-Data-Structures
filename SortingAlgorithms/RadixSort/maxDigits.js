@@ -1,4 +1,4 @@
-import digitCount from "./digit_count.js";
+import digitCount from "./digitCount.js";
 
 const maxDigits = (arr) => {
   let max = 0;
