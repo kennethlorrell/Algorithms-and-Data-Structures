@@ -1,12 +1,6 @@
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
-    this.prev = null;
-  }
-}
+import Node from './Node.js';
 
-class DoublyLinkedLIst {
+class DoublyLinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
@@ -27,7 +21,7 @@ class DoublyLinkedLIst {
 
     this.length++;
 
-    return node;
+    return this;
   }
 
   pop() {
@@ -84,7 +78,7 @@ class DoublyLinkedLIst {
 
     this.length++;
 
-    return node;
+    return this;
   }
 
   get(index) {
@@ -170,5 +164,5 @@ class DoublyLinkedLIst {
   }
 }
 
-const dll = new DoublyLinkedLIst();
+const dll = new DoublyLinkedList();
 console.log(dll);
