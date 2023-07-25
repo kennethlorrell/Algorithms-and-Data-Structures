@@ -89,8 +89,9 @@ class DoublyLinkedLIst {
 
   get(index) {
     if (index < 0 || index >= this.length) {
-      return false;
+      return null;
     }
+
     let current;
 
     if (index <= Math.round(this.length / 2)) {
@@ -107,15 +108,67 @@ class DoublyLinkedLIst {
 
     return current;
   }
+
+  set(index, value) {
+    const node = this.get(index);
+
+    if (!node) {
+      return false;
+    }
+
+    node.value = value;
+
+    return true;
+  }
+
+  insert(index, value) {
+    if (index < 0 || index > this.length) {
+      return false;
+    } else if (index === 0) {
+      return !!this.unshift(value);
+    } else if (index === this.length) {
+      return !!this.push(value);
+    } else {
+      const newNode = new Node(value);
+      const prevNode = this.get(index - 1);
+      const nextNode = prevNode.next;
+
+      prevNode.next = newNode;
+      newNode.prev = prevNode;
+      newNode.next = nextNode;
+      nextNode.prev = newNode;
+      this.length++;
+
+      return true;
+    }
+  }
+
+  remove(index) {
+    if (index < 0 || index >= this.length) {
+      return null;
+    } else if (index === 0) {
+      return this.shift();
+    } else if (index === this.length - 1) {
+      return this.pop();
+    } else {
+      const removedNode = this.get(index);
+      const prevNode = removedNode.prev;
+      const nextNode = removedNode.next;
+
+      if (!removedNode) {
+        return null;
+      }
+
+      prevNode.next = nextNode;
+      nextNode.prev = prevNode;
+      removedNode.prev = null;
+      removedNode.next = null;
+      this.length--;
+
+      return removedNode;
+    }
+  }
 }
 
 const dll = new DoublyLinkedLIst();
-dll.unshift(1);
-dll.unshift(5);
-dll.push(10);
-console.log(dll.get(-1));
-console.log(dll.get(0));
-console.log(dll.get(1));
-console.log(dll.get(2));
-console.log(dll.get(3));
 console.log(dll);
