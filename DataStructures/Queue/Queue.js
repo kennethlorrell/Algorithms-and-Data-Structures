@@ -1,46 +1,46 @@
-import Node from '../SinglyLinkedList/Node.js';
+import Node from "../SinglyLinkedList/Node.js";
 
-class Stack {
+class Queue {
   constructor() {
     this.first = null;
     this.last = null;
     this.size = 0;
   }
 
-  push(value) {
+  enqueue(value) {
     const newNode = new Node(value);
 
     if (!this.size) {
-      this.last = newNode;
+      this.first = newNode;
     } else {
-      newNode.next = this.first;
+      this.last.next = newNode;
     }
 
-    this.first = newNode;
+    this.last = newNode;
 
     return ++this.size;
   }
 
-  pop() {
+  dequeue() {
     if (!this.size) {
       return undefined;
     }
 
-    const poppedNode = this.first;
+    const firstNode = this.first;
 
     if (this.size === 1) {
       this.first = null;
       this.last = null;
     } else {
-      this.first = poppedNode.next;
-      poppedNode.next = null;
+      this.first = firstNode.next;
+      firstNode.next = null;
     }
 
     this.size--;
 
-    return poppedNode.value;
+    return firstNode.value;
   }
 }
 
-const stack = new Stack();
-console.log(stack);
+const queue = new Queue();
+console.log(queue);
