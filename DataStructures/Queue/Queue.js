@@ -1,6 +1,6 @@
 import Node from "../SinglyLinkedList/Node.js";
 
-class Queue {
+export default class Queue {
   constructor() {
     this.first = null;
     this.last = null;
@@ -42,5 +42,5 @@ class Queue {
   }
 }
 
-const queue = new Queue();
-console.log(queue);
+// const queue = new Queue();
+// console.log(queue);

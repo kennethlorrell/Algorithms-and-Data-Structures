@@ -1,6 +1,6 @@
 import Node from '../SinglyLinkedList/Node.js';
 
-class Stack {
+export default class Stack {
   constructor() {
     this.first = null;
     this.last = null;
@@ -42,5 +42,5 @@ class Stack {
   }
 }
 
-const stack = new Stack();
-console.log(stack);
+// const stack = new Stack();
+// console.log(stack);

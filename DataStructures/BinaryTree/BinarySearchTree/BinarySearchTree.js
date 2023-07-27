@@ -1,6 +1,6 @@
 import Node from './Node.js';
 
-class BinarySearchTree {
+export default class BinarySearchTree {
   constructor() {
     this.root = null;
   }
@@ -53,5 +53,5 @@ class BinarySearchTree {
   }
 }
 
-const tree = new BinarySearchTree();
-console.log(tree);
+// const tree = new BinarySearchTree();
+// console.log(tree);
