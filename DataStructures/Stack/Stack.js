@@ -1,4 +1,4 @@
-import Node from "../SinglyLinkedList/Node.js";
+import Node from "../List/SinglyLinkedList/Node.js";
 
 export default class Stack {
   constructor() {
