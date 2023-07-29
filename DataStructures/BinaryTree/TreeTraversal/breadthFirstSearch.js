@@ -1,4 +1,4 @@
-import Queue from '../../Queue/Queue.js';
+import Queue from "../../Queue/Queue.js";
 import BinarySearchTree from "../BinarySearchTree/BinarySearchTree.js";
 
 const breadthFirstSearch = (tree) => {

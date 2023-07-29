@@ -1,4 +1,4 @@
-import swap from '../utils/swap.js';
+import swap from "../utils/swap.js";
 
 const bubbleSort = (arr) => {
   let isSwapped = true;
