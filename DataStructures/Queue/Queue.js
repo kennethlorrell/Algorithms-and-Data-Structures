@@ -1,10 +1,14 @@
 import Node from "../List/SinglyLinkedList/Node.js";
 
 export default class Queue {
-  constructor() {
+  constructor(...args) {
     this.first = null;
     this.last = null;
     this.size = 0;
+
+    args.forEach(
+      (argument) => this.enqueue(argument)
+    );
   }
 
   enqueue(value) {
@@ -42,5 +46,5 @@ export default class Queue {
   }
 }
 
-// const queue = new Queue();
-// console.log(queue);
+const queue = new Queue();
+console.log(queue);

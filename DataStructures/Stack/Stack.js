@@ -1,10 +1,14 @@
 import Node from "../List/SinglyLinkedList/Node.js";
 
 export default class Stack {
-  constructor() {
+  constructor(...args) {
     this.first = null;
     this.last = null;
     this.size = 0;
+
+    args.forEach(
+      (argument) => this.push(argument)
+    );
   }
 
   push(value) {
