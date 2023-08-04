@@ -1,7 +1,7 @@
-import Stack from "../Stack/Stack.js";
-import Queue from "../Queue/Queue.js";
+import Stack from "../../Stack/Stack.js";
+import Queue from "../../Queue/Queue.js";
 
-class Graph {
+class UnweighedGraph {
   constructor() {
     this.adjacencyList = {};
   }
@@ -101,7 +101,7 @@ class Graph {
   }
 }
 
-const graph = new Graph();
+const graph = new UnweighedGraph();
 graph.addVertex('A');
 graph.addVertex('B');
 graph.addVertex('C');
