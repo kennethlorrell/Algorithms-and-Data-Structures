@@ -146,7 +146,7 @@ class SinglyLinkedList {
   reverse() {
     // 1 -> 2 -> 3 -> 4 -> 5
     let node = this.head; // 1
-    this.head = this.tail; //5
+    this.head = this.tail; // 5
     this.tail = node; // 1
     let next = null;
     let prev = null;
@@ -160,7 +160,29 @@ class SinglyLinkedList {
 
     return this;
   }
+
+  rotate(num) {
+    if (num === 0 || num >= this.length) {
+      return this;
+    }
+
+    if (num < 0) {
+      num = this.length + num;
+    }
+
+    const newHead = this.get(num);
+    const newTail = this.get(num - 1);
+
+    this.tail.next = this.head;
+    this.head = newHead;
+    this.tail = newTail;
+    this.tail.next = null;
+
+    return this;
+  }
 }
 
 const list = new SinglyLinkedList();
+list.push(1).push(2).push(3).push(4).push(5);
+list.rotate(-1);
 console.log(list);
