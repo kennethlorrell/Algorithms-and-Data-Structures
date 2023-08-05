@@ -162,7 +162,34 @@ class DoublyLinkedList {
       return removedNode;
     }
   }
+
+  reverse(){
+    let startNode = this.head;
+    let prev = null;
+    let next = null;
+
+    this.head = this.tail;
+    this.tail = startNode;
+
+    while (startNode) {
+      prev = startNode.next;
+      startNode.next = next;
+      startNode.prev = prev;
+      next = startNode;
+      startNode = startNode.prev;
+    }
+
+    return this;
+  }
 }
 
 const dll = new DoublyLinkedList();
-console.log(dll);
+dll.push(1);
+dll.push(2);
+dll.push(3);
+dll.push(4);
+dll.reverse();
+console.log(dll.head.value);
+console.log(dll.head.next.value);
+console.log(dll.head.next.next.value);
+console.log(dll.head.next.next.next.value);
